@@ -33,10 +33,12 @@ To make things easier I created an application that replaces the files inside th
 #### Using a jar console command
 
 1. Stop IntelliJ IDEA
-1. Execute the following commands to replace the files inside the jar package.   This commands are updating the specified files inside the jar container. You local path must match the path inside the jar.
-    >jar -ufv idea.jar com/intellij/ide/ui/laf/intellijlaf.properties
-    ><!--- -->
-    >jar -ufv idea.jar com/intellij/ide/ui/laf/darcula/darcula.properties
+1. Execute the following commands to replace the files inside the jar package. These commands are updating the specified files inside the jar container. You local path must match the path inside the jar.
+    ``` sh
+    jar -ufv idea.jar com/intellij/ide/ui/laf/intellijlaf.properties
+
+    jar -ufv idea.jar com/intellij/ide/ui/laf/darcula/darcula.properties
+    ```
 1. Start IntelliJ IDEA
 
 #### Using a file archiver
@@ -45,9 +47,12 @@ To make things easier I created an application that replaces the files inside th
 1. Locate the _idea.jar_ file on your system.
 1. Open the idea.jar using a file archiver utility like 7zip.
 1. Navigate to the following path inside the _idea.jar_ file:
-    > _\\com\\intellij\\ide\\ui\\laf\\_
+    ``` sh
+    com/intellij/ide/ui/laf/
+    ```
 1. Backup and then replace following files with the modified versions from this repository:
-    >.\\intellijlaf.properties
-    ><!--- -->
-    >.\\darcula\\darcula.properties
+    ``` sh
+    /intellijlaf.properties
+    /darcula/darcula.properties
+    ```
 1. Start IntelliJ IDEA
