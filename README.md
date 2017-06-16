@@ -22,7 +22,7 @@ Because the customization of the IntelliJ UI is not as simple as creating an edi
 
 To make things easier I created an application that replaces the files inside the jar. Furthermore, it creates a backup of the original files. Alternatively you can simply exchange the files manually.
 
-### Option 1: Install automatically (with Backup)
+### Option 1: Install (and backup) automatically
 
 1. Stop IntelliJ IDEA
 1. // TBD
@@ -30,12 +30,24 @@ To make things easier I created an application that replaces the files inside th
 
 ### Option 2: Install manually
 
+#### Using a jar console command
+
+1. Stop IntelliJ IDEA
+1. Execute the following commands to replace the files inside the jar package.   This commands are updating the specified files inside the jar container. You local path must match the path inside the jar.
+    >jar -ufv idea.jar com/intellij/ide/ui/laf/intellijlaf.properties
+    ><!--- -->
+    >jar -ufv idea.jar com/intellij/ide/ui/laf/darcula/darcula.properties
+1. Start IntelliJ IDEA
+
+#### Using a file archiver
+
 1. Stop IntelliJ IDEA
 1. Locate the _idea.jar_ file on your system.
-1. Open the idea.jar using a package manager like 7zip or your console.
+1. Open the idea.jar using a file archiver utility like 7zip.
 1. Navigate to the following path inside the _idea.jar_ file:
-- _\\com\\intellij\\ide\\ui\\laf\\_
-1. Replace the content of the following files with the modified versions in this repository:
-- _.\\intellijlaf.properties_
-- _.\\darcula\\darcula.properties_
+    > _\\com\\intellij\\ide\\ui\\laf\\_
+1. Backup and then replace following files with the modified versions from this repository:
+    >.\\intellijlaf.properties
+    ><!--- -->
+    >.\\darcula\\darcula.properties
 1. Start IntelliJ IDEA
