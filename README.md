@@ -10,6 +10,14 @@ For more information about the Solarized scheme, for screenshots, details and co
 [Solarized repository]: <https://github.com/altercation/solarized>
 [IntelliJ-only repository]: <https://github.com/jkaving/intellij-colors-solarized>
 
+## Contents
+
+- [Status](#status)
+- [Installation](#installation)
+  - Option 1: Automatically
+  - Option 2: Manually with jar command
+  - Option 3: Manually with file archiver
+
 ## Status
 
 Until now, it is not possible to provide custom themes for the IntelliJ IDEA UI. To get around this limitation it is possible to edit the existing themes directly by manipulating the property files inside the idea.jar container.
@@ -28,9 +36,7 @@ To make things easier I created an application that replaces the files inside th
 1. // TBD
 1. Start IntelliJ IDEA
 
-### Option 2: Install manually
-
-#### Using a jar console command
+### Option 2: Install manually (jar console command)
 
 1. Stop IntelliJ IDEA
 1. Execute the following commands to replace the files inside the jar package. These commands are updating the specified files inside the jar container. You local path must match the path inside the jar.
@@ -41,7 +47,7 @@ To make things easier I created an application that replaces the files inside th
     ```
 1. Start IntelliJ IDEA
 
-#### Using a file archiver
+### Option 2: Install manually (file archiver)
 
 1. Stop IntelliJ IDEA
 1. Locate the _idea.jar_ file on your system.
