@@ -51,6 +51,9 @@ if /i "%choice:~0,1%"=="Y" (
   set /p searchDirectory="> Enter the path to your IntelliJ installation: " 
 )
 
+echo.
+echo -----------------------------------------------------------------------------------------
+
 :: search the default JetBrains directory for the idea.jar file - there can be multiple
 for /d /r %searchDirectory% %%v in (%searchFile%) do if exist "%%~fv" (
     call :install "%%~fv"
@@ -73,7 +76,12 @@ echo   %1
 echo.
 set /p choice="> Type [Y]es or [N]o: " 
 if /i "%choice:~0,1%"=="Y" (
+
   echo.
+  echo  Patching your idea.jar. A backup is created next to the patched file.
+  echo.
+  copy %1 %1.bak >nul
+
   jar -ufv %1 com/intellij/ide/ui/laf/darcula/darcula.properties
   jar -ufv %1 com/intellij/ide/ui/laf/intellijlaf.properties
 )
