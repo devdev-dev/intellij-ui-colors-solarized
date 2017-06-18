@@ -37,12 +37,25 @@ echo.
 echo --------------------------- Solarized UI Theme for IntelliJ -----------------------------
 echo.
 echo -----------------------------------------------------------------------------------------
-:: search the default JetBrains directory for the idea.jar file - there can be multiple
-set searchDirectory="C:\Program Files\JetBrains"
+
+set searchDirectory="C:\Program Files\"
 set searchFile=idea.jar
+
+echo.
+echo   Searching for your IntelliJ installation. 
+echo   Default search directory is: %searchDirectory%?
+echo.
+set /p choice="> Would you like to change the search location? Type [Y]es or [N]o: " 
+if /i "%choice:~0,1%"=="Y" (
+  echo.
+  set /p searchDirectory="> Enter the path to your IntelliJ installation: " 
+)
+
+:: search the default JetBrains directory for the idea.jar file - there can be multiple
 for /d /r %searchDirectory% %%v in (%searchFile%) do if exist "%%~fv" (
     call :install "%%~fv"
   )
+
 echo.
 echo -----------------------------------------------------------------------------------------
 echo.
